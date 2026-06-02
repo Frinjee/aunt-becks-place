@@ -1,0 +1,9 @@
+{
+    "routes": [
+      {
+        "route": "https://yourdomain.com/*",
+        "redirect": "https://www.yourdomain.com",
+        "statusCode": 301
+      }
+    ]
+  }
