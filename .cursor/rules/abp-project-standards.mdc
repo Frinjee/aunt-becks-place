@@ -1,0 +1,151 @@
+---
+description: "ABP project standards: design tokens, component architecture, Azure SSR config, and deployment rules for Aunt Beck's Place Next.js 14+ site. Apply when scaffolding components, configuring next.config.js, or working on deployment."
+author: "@frinjee"
+alwaysApply: false
+---
+
+# ABP — Project Standards
+
+> **When to apply:** Attach when creating or modifying components, design tokens, `next.config.js`, or GitHub Actions workflow. Not needed for pure logic/utility work.
+
+---
+
+## Design Tokens (Source of Truth)
+
+All values live in `styles/design-tokens.css`. **Never hardcode hex values or font names inline.**
+
+| Token | Value |
+|---|---|
+| `--color-text` | `#52325b` |
+| `--color-text-muted` | `#76547d` |
+| `--color-primary` | `#7c2d86` |
+| `--color-primary-hover` | `#682370` |
+| `--color-card-surface` | `rgba(251, 247, 251, .78)` |
+| `--color-border` | `rgba(84, 42, 90, 0.18)` |
+| `--color-divider` | `rgba(84, 42, 90, 0.20)` |
+| `--font-display` | `Cormorant Garamond, Georgia, serif` |
+| `--font-body` | `Lexend, Arial, sans-serif` |
+| `--font-heading-ui` | `Comic Relief, sans-serif` |
+| `--font-micro` | `Atkinson Hyperlegible, sans-serif` |
+
+**Font size floor:** never below `9px`. Micro/label minimum: `9.5px` (`var(--text-micro)`).
+**Font weight floor:** `450` minimum everywhere; target `500`.
+
+Background gradient: `linear-gradient(90deg, #f7f3f8 0%, #f0d8f1 55%, #d7b0dc 100%)`
+
+---
+
+## Directory Structure
+
+```
+app/
+  layout.tsx        ← font injection, root metadata, <html lang="en">
+  page.tsx          ← Hero → IndexRow → NewsGrid → OffsetGrid → Footer
+  globals.css
+  about/page.tsx
+  events/page.tsx
+  donate/page.tsx
+components/
+  Hero.tsx  EditorialLine.tsx  IndexRow.tsx  MediaFeature.tsx
+  OffsetGrid.tsx  StoryCard.tsx  SundayDinner.tsx  Donations.tsx
+  NewsGrid.tsx  Footer.tsx  ui/SocialButton.tsx
+styles/
+  design-tokens.css
+public/
+  assets/abp/imgs/   ← never rename or move assets
+.github/workflows/
+  azure-static-web-apps.yml
+```
+
+---
+
+## Component Rules
+
+### `'use client'` — Only Where Required
+Add `'use client'` only for: `useState`, `useEffect`, `useRef`, `IntersectionObserver`, event listeners. Everything else is a Server Component.
+
+### Asset Paths
+Always leading slash: `/assets/abp/imgs/crossstreet.png`. Never dynamic string composition.
+
+### Images
+Use `next/image` for all images. Hero brand mark gets `priority` (LCP candidate). All others lazy by default.
+
+### Per-Component Key Requirements
+
+| Component | Requirement |
+|---|---|
+| `EditorialLine` | 1px divider, `var(--color-divider)`, brightens to `--color-primary` on adjacent hover |
+| `IndexRow` | Hover: `translateX(1rem)` + adjacent EditorialLine brightens |
+| `MediaFeature` | `saturate(0.85)` default; hover `saturate(1) scale(1.03)` — on wrapper div only |
+| `OffsetGrid` | Right col `margin-top: 4rem` desktop; collapses to single col at `max-width: 768px` |
+| `StoryCard` | No fixed width/height; glassmorphism via `var(--color-card-surface)` + `backdrop-filter: blur(4px)` |
+| `Donations` | QR codes side-by-side, centered, no fixed widths |
+| `Hero` | Entrance fade-up once on mount; `h1` in `--font-display`; manifesto `max-width: 45ch` |
+| `Footer` | `EditorialLine` top border; wordmark in `--font-display`; `SocialButton` for FB + IG |
+| `ui/SocialButton` | Circular; `aria-label` required; `rel="noopener noreferrer"` |
+
+### Motion Rules
+- Transitions on `transform` and `opacity`/`color`/`background` only — never `width`, `height`, `top`
+- Duration: `0.25s ease` for hover; `0.4s ease` for reveal
+- No bounce or elastic easing
+- Stagger: `transition-delay: calc(var(--i, 0) * 0.08s)`
+- `prefers-reduced-motion` is mandatory:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+```
+
+### Scroll Reveal (IntersectionObserver)
+```tsx
+'use client';
+const ref = useRef<HTMLDivElement>(null);
+useEffect(() => {
+  const el = ref.current; if (!el) return;
+  const observer = new IntersectionObserver(
+    ([entry]) => { if (entry.isIntersecting) el.classList.add('visible'); },
+    { threshold: 0.1 }
+  );
+  observer.observe(el);
+  return () => observer.disconnect();
+}, []);
+```
+
+---
+
+## AI Aesthetic — Never Do These
+
+- Add more purple/violet gradients (design uses purple intentionally already)
+- Center-align body text, cards, or feature descriptions
+- Use icon-in-colored-circle feature grids
+- Use gradient buttons — solid `var(--color-primary)` only
+- Apply `transform` directly to `<svg>` or `<img>` — always wrap
+
+---
+
+## Azure SSR Deployment
+
+### `next.config.js` (exact shape)
+```js
+const nextConfig = {
+  images: { unoptimized: false },
+  // experimental: { viewTransition: true } — add when View Transitions are implemented
+};
+module.exports = nextConfig;
+```
+- No `output: 'export'`
+- No `staticwebapp.config.json` with `navigationFallback` → `index.html`
+- No Tailwind or CSS frameworks
+
+### GitHub Actions
+- `app_location: "/"`
+- `api_location: ""`
+- `output_location: ""` (empty — Azure auto-detects `.next`)
+- `.gitignore` must include `.next` and `node_modules`
+
+---
+
+## Content — Never Hallucinate
+
+All text, URLs, image paths, dates, and email addresses are locked in the project spec. Never substitute or paraphrase. Reference `docs/spec.md` or the original project prompt.

@@ -1,0 +1,170 @@
+---
+description: "Build verification, accessibility (WCAG AA + dyslexia-aware), performance, and deployment checklists for ABP. Apply before merging any component or pushing to main."
+author: "@frinjee"
+alwaysApply: false
+---
+
+# ABP — Build & QA Checklists
+
+> **When to apply:** Run the relevant section at each lifecycle gate. Attach when reviewing a component, prepping a deployment, or auditing accessibility. Not needed during initial scaffolding.
+
+---
+
+## Build Order
+
+```
+1. styles/design-tokens.css + app/globals.css
+2. app/layout.tsx (font loading, metadata)
+3. EditorialLine.tsx        ← used everywhere; build first
+4. Hero.tsx
+5. IndexRow.tsx
+6. MediaFeature.tsx → NewsGrid.tsx
+7. StoryCard.tsx → OffsetGrid.tsx
+8. SundayDinner.tsx, Donations.tsx
+9. ui/SocialButton.tsx → Footer.tsx
+10. app/page.tsx (assembly)
+11. app/about/page.tsx, app/events/page.tsx, app/donate/page.tsx
+12. .github/workflows/azure-static-web-apps.yml
+```
+
+---
+
+## Component Build Checklist
+
+Run for every component before moving to the next.
+
+### Structure
+- [ ] File name matches spec exactly (`Hero.tsx` not `HeroSection.tsx`)
+- [ ] TypeScript strict — explicit prop interface, no `any` types
+- [ ] All text copied verbatim from content spec — no paraphrasing
+
+### Styling
+- [ ] Zero hardcoded hex values — all colors via CSS variables
+- [ ] All fonts via `var(--font-display / --font-body / --font-heading-ui / --font-micro)`
+- [ ] Font-weight ≥ 450 everywhere (target 500)
+- [ ] No text below 9px (micro minimum: 9.5px)
+- [ ] Glassmorphism cards: `var(--color-card-surface)` + `backdrop-filter: blur(4px)`
+- [ ] Borders: `var(--color-border)` or `var(--color-divider)` — never `#ccc` or `gray`
+
+### Motion
+- [ ] Hover: `transform` and `color`/`background` over `0.25s ease` only
+- [ ] Reveal: `opacity` + `translateY` via IntersectionObserver
+- [ ] `prefers-reduced-motion` block present in globals.css
+- [ ] `html { scroll-behavior: smooth; }` in globals.css
+
+### Images
+- [ ] `next/image` for all images (never raw `<img>`)
+- [ ] Hero brand mark has `priority` prop
+- [ ] `width`/`height` or `fill`+`sizes` on every `<Image>`
+- [ ] Path uses leading slash: `/assets/abp/imgs/…`
+
+---
+
+## Accessibility (WCAG 2.1 AA + Dyslexia-Aware)
+
+### Keyboard
+- [ ] All interactive elements Tab-reachable in visual order
+- [ ] Focus ring always visible — never `outline: none` without replacement
+- [ ] Custom hover interactions have focus equivalents
+- [ ] Skip-to-content link present
+
+### Screen Reader
+- [ ] One `<h1>` per page; heading levels not skipped
+- [ ] All images have `alt` (descriptive on content, `""` on decorative)
+- [ ] `SocialButton` has `aria-label`
+- [ ] `<nav aria-label="…">` on navigation landmarks
+
+### Visual Contrast
+- [ ] `--color-text` (#52325b) on gradient ≥ 4.5:1
+- [ ] `--color-text-muted` (#76547d) on gradient ≥ 4.5:1
+- [ ] White on `--color-primary` (#7c2d86) ≥ 4.5:1
+- [ ] Color is not the only state indicator
+
+### Dyslexia-Aware Typography
+- [ ] Body copy: Lexend (reading ease)
+- [ ] UI labels/headings: Comic Relief (distinct letterforms)
+- [ ] Tiny metadata: Atkinson Hyperlegible
+- [ ] Line-height ≥ 1.5 on body paragraphs
+- [ ] No justified text alignment
+- [ ] Paragraph `max-width` ≤ 72ch
+
+### Touch & Mobile
+- [ ] All tap targets ≥ 44×44px
+- [ ] No hover-only UI patterns
+
+---
+
+## Performance Checklist
+
+- [ ] `'use client'` only where browser APIs/hooks required
+- [ ] `priority` on Hero `<Image>` (LCP candidate)
+- [ ] All fonts loaded via `next/font/google` — not CDN `<link>` tags
+- [ ] `display: 'swap'` on all font configs
+- [ ] IntersectionObserver cleanup runs on unmount
+- [ ] `images.unoptimized: false` in `next.config.js`
+
+### Core Web Vitals Targets
+| Metric | Target |
+|---|---|
+| LCP | < 2.5s |
+| INP | < 200ms |
+| CLS | < 0.1 |
+| Lighthouse Performance | ≥ 85 |
+| Lighthouse Accessibility | ≥ 90 |
+
+---
+
+## Azure Deployment Checklist
+
+### `next.config.js`
+- [ ] No `output: 'export'`
+- [ ] `images.unoptimized: false`
+- [ ] No `output: 'standalone'` unless bundle demands it
+
+### GitHub Actions (`azure-static-web-apps.yml`)
+- [ ] `app_location: "/"`
+- [ ] `api_location: ""`
+- [ ] `output_location: ""` (empty)
+- [ ] `AZURE_STATIC_WEB_APPS_API_TOKEN` secret set in repo
+
+### Repo
+- [ ] `.gitignore` includes `.next` and `node_modules`
+- [ ] No `.env` files committed
+- [ ] No `staticwebapp.config.json` with `navigationFallback` → `index.html`
+
+---
+
+## Pre-Merge Review
+
+### Content Fidelity
+- [ ] All 6 IndexRow items in correct order with exact dates/categories
+- [ ] All 4 MediaFeature cards: correct image path, title, external URL
+- [ ] Footer email: `auntbecksplacebaltimore@gmail.com`
+- [ ] Footer socials: `facebook.com/AuntBecksPlace/` + `instagram.com/auntbecksplace/`
+- [ ] Copyright: `Aunt Becks Place ©2026`
+
+### Cross-Device
+- [ ] Desktop (1280px+): offset grid, hover states
+- [ ] Tablet (768px): grid transitions
+- [ ] Mobile (375px): single-column, hero `clamp(2.4rem, 10vw, 4rem)`, touch targets ≥ 44px
+
+### Design System
+- [ ] `design-tokens.css` contains all required variables
+- [ ] No inline `style={{ color: '#...' }}` with raw hex
+
+### ADR — Document When You
+- Change `next.config.js` structure
+- Add a new npm dependency
+- Deviate from the component architecture spec
+
+---
+
+## Boundaries Reference
+
+| Always | Ask First | Never |
+|---|---|---|
+| CSS variables for all color/font refs | Add a new npm dependency | `output: 'export'` |
+| Font-weight ≥ 450 | Change `next.config.js` structure | Commit `.next/` |
+| Semantic HTML over `<div>` | Add `staticwebapp.config.json` entries | Hardcode hex colors |
+| `rel="noopener noreferrer"` on external links | Modify `.github/workflows/` | Tailwind or CSS frameworks |
+| `alt` on every image | Alter asset file names or paths | `navigationFallback` catch-all |

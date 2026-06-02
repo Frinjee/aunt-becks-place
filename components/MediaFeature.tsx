@@ -1,0 +1,32 @@
+import Image from "next/image";
+
+import type { NewsEntry } from "@/lib/content";
+
+type MediaFeatureProps = {
+  readonly entry: NewsEntry;
+  readonly featured?: boolean;
+};
+
+export function MediaFeature({ entry, featured = false }: MediaFeatureProps) {
+  return (
+    <article className={featured ? "media-feature media-feature--large" : "media-feature"}>
+      <a href={entry.href} target="_blank" rel="noopener noreferrer">
+        <span className="media-feature__image">
+          <Image
+            src={entry.image}
+            alt={entry.alt}
+            fill
+            sizes={featured ? "(max-width: 900px) 100vw, 58vw" : "(max-width: 900px) 100vw, 32vw"}
+          />
+        </span>
+        <span className="media-feature__overlay">
+          <span className="meta-label">{entry.category}</span>
+          <span className="media-feature__title">{entry.title}</span>
+          <span className="media-feature__source">
+            {entry.source}, {entry.date}
+          </span>
+        </span>
+      </a>
+    </article>
+  );
+}
