@@ -1,7 +1,7 @@
 {
     "routes": [
       {
-        "route": "https://www.auntbecksplace.live/*",
+        "route": "https://auntbecksplace.live/*",
         "redirect": "https://www.auntbecksplace.live",
         "statusCode": 301
       }
