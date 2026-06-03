@@ -25,4 +25,4 @@ Thumbs.db
 # editor
 .vscode/*
 !.vscode/settings.json
-cursor/
+.cursor/
