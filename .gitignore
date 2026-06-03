@@ -26,3 +26,6 @@ Thumbs.db
 .vscode/*
 !.vscode/settings.json
 .cursor/
+
+#
+staticwebapp.config.json
