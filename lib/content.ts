@@ -128,12 +128,12 @@ export const sundayDinner = {
 
 export const donationCodes = [
   {
-    src: "/assets/abp/imgs/qrcode-base.svg",
+    src: "/assets/abp/imgs/cash-app-abp-withlove-2.svg",
     label: "$AuntBecksPlace",
     alt: "QR Code $AuntBecksPlace",
   },
   {
-    src: "/assets/abp/imgs/qrcode-weaves.svg",
+    src: "/assets/abp/imgs/cash-app-abpweaves-2-ro.svg",
     label: "$AuntBecksPlaceWeaves",
     alt: "QR Code $AuntBecksPlaceWeaves",
   },
