@@ -772,6 +772,36 @@ figcaption,
   cursor: pointer;
 }
 
+.contact-form__submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.form-field__error,
+.form-feedback {
+  color: var(--color-primary);
+  font-family: var(--font-meta);
+  font-size: var(--text-small);
+  font-weight: 700;
+  margin: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+
+.form-feedback--success {
+  color: var(--color-text);
+}
+
+.form-field--honeypot {
+  block-size: 0;
+  inline-size: 0;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+}
+
 .site-footer {
   padding-top: var(--space-20);
 }
