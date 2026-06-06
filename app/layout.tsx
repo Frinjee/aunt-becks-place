@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible, Inclusive_Sans, Lexend } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -66,15 +67,22 @@ export default function RootLayout({ children }: RootLayoutProps) {
           Skip to content
         </a>
         <header className="site-header">
-          <Link className="site-header__brand" href="/">
-            {site.name}
-          </Link>
           <nav className="site-header__nav" aria-label="Site">
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/events">Events</Link>
             <Link href="/#media">Press</Link>
             <Link href="/donate">Donate</Link>
+            <Link className="site-header__brand" href="/" aria-label={`${site.name} home`}>
+              <Image
+                className="site-header__brand-icon"
+                src={site.headerLogo}
+                alt=""
+                width={1376}
+                height={768}
+                sizes="64px"
+              />
+            </Link>
           </nav>
         </header>
         <main className="page-shell" id="content">
