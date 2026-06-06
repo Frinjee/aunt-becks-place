@@ -29,6 +29,7 @@ export const site = {
   eyebrow: "At the corner of care and community",
   email: "auntbecksplacebaltimore@gmail.com",
   brandMark: "/assets/abp/imgs/crossstreet.png",
+  heroLogo: "/assets/abp/imgs/abp-logo-1.png",
   manifesto:
     "To practice restorative justice as acts of love by building community mutual aid, restoring through Sunday dinners, access to resources, and networking, and restoring the social fabric of Baltimore City.",
   description: "Aunt Becks Place community support and neighborhood care page.",
