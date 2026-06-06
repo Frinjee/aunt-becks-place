@@ -11,6 +11,7 @@ import {
 } from "@/lib/contact/schema";
 import { contactTopics } from "@/lib/contact/topics";
 import { site } from "@/lib/content";
+import styles from "@/components/ContactForm.module.css";
 
 type ContactFormProps = {
   action: typeof submitContactForm;
@@ -21,7 +22,7 @@ function SubmitButton() {
 
   return (
     <button
-      className="donations__link contact-form__submit"
+      className={`donations__link ${styles.submitButton}`}
       type="submit"
       disabled={pending}
       aria-busy={pending}
@@ -42,8 +43,8 @@ export function ContactForm({ action }: ContactFormProps) {
   );
 
   return (
-    <form className="contact-form" action={formAction} noValidate>
-      <div className="form-field">
+    <form className={styles.contactForm} action={formAction} noValidate>
+      <div className={styles.formField}>
         <label htmlFor="contact-name">Name</label>
         <input
           id="contact-name"
@@ -55,13 +56,13 @@ export function ContactForm({ action }: ContactFormProps) {
           aria-describedby={state.fieldErrors?.name ? fieldErrorId("name") : undefined}
         />
         {state.fieldErrors?.name ? (
-          <p className="form-field__error" id={fieldErrorId("name")} role="alert">
+          <p className={styles.fieldError} id={fieldErrorId("name")} role="alert">
             {state.fieldErrors.name}
           </p>
         ) : null}
       </div>
 
-      <div className="form-field">
+      <div className={styles.formField}>
         <label htmlFor="contact-email">Email</label>
         <input
           id="contact-email"
@@ -73,13 +74,13 @@ export function ContactForm({ action }: ContactFormProps) {
           aria-describedby={state.fieldErrors?.email ? fieldErrorId("email") : undefined}
         />
         {state.fieldErrors?.email ? (
-          <p className="form-field__error" id={fieldErrorId("email")} role="alert">
+          <p className={styles.fieldError} id={fieldErrorId("email")} role="alert">
             {state.fieldErrors.email}
           </p>
         ) : null}
       </div>
 
-      <div className="form-field">
+      <div className={styles.formField}>
         <label htmlFor="contact-topic">What are you reaching out about?</label>
         <select
           id="contact-topic"
@@ -96,13 +97,13 @@ export function ContactForm({ action }: ContactFormProps) {
           ))}
         </select>
         {state.fieldErrors?.topic ? (
-          <p className="form-field__error" id={fieldErrorId("topic")} role="alert">
+          <p className={styles.fieldError} id={fieldErrorId("topic")} role="alert">
             {state.fieldErrors.topic}
           </p>
         ) : null}
       </div>
 
-      <div className="form-field">
+      <div className={styles.formField}>
         <label htmlFor="contact-message">Message</label>
         <textarea
           id="contact-message"
@@ -114,18 +115,18 @@ export function ContactForm({ action }: ContactFormProps) {
           aria-describedby={state.fieldErrors?.message ? fieldErrorId("message") : undefined}
         />
         {state.fieldErrors?.message ? (
-          <p className="form-field__error" id={fieldErrorId("message")} role="alert">
+          <p className={styles.fieldError} id={fieldErrorId("message")} role="alert">
             {state.fieldErrors.message}
           </p>
         ) : null}
       </div>
 
-      <div className="form-field form-field--honeypot" aria-hidden="true">
+      <div className={`${styles.formField} ${styles.formFieldHoneypot}`} aria-hidden="true">
         <label htmlFor="contact-company">Company</label>
         <input id="contact-company" name="company" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <p className="form-note">
+      <p className={styles.formNote}>
         Messages are sent to <a href={`mailto:${site.email}`}>{site.email}</a>. If the form is
         unavailable, you can email us directly.
       </p>
@@ -133,7 +134,9 @@ export function ContactForm({ action }: ContactFormProps) {
       {state.message ? (
         <p
           className={
-            state.status === "success" ? "form-feedback form-feedback--success" : "form-feedback"
+            state.status === "success"
+              ? `${styles.formFeedback} ${styles.formFeedbackSuccess}`
+              : styles.formFeedback
           }
           role={state.status === "error" ? "alert" : "status"}
           aria-live="polite"

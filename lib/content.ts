@@ -14,6 +14,8 @@ export type NewsEntry = {
   readonly href: string;
   readonly image: string;
   readonly alt: string;
+  readonly width: number;
+  readonly height: number;
 };
 
 export type EventEntry = {
@@ -47,6 +49,8 @@ export const newsEntries = [
     href: "https://www.wbaltv.com/article/honor-rows-weave-the-social-fabric-project-started-simply-with-kind-act/63044357",
     image: "/assets/abp/imgs/videoframe_13226.png",
     alt: "Honor Rows: 'Weave: The Social Fabric Project' news thumbnail",
+    width: 960,
+    height: 540,
   },
   {
     title: "Aunt Beck's Place Provides Meals For Those In Need",
@@ -56,6 +60,8 @@ export const newsEntries = [
     href: "https://www.wypr.org/show/on-the-record/2025-03-03/aunt-becks-place-provides-meals-for-those-in-need",
     image: "/assets/abp/imgs/wypr.jpg",
     alt: "Aunt Beck's Place Provides Meals For Those In Need news thumbnail",
+    width: 880,
+    height: 542,
   },
   {
     title: "Connections, Opportunities Propel Graduate's Ambition",
@@ -65,6 +71,8 @@ export const newsEntries = [
     href: "https://www.ubalt.edu/about/newsroom/student-stories-rebekah-opher.cfm",
     image: "/assets/abp/imgs/rebekah-opher-feature2.jpg",
     alt: "Connections, Opportunities Propel Graduate's Ambition news thumbnail",
+    width: 2000,
+    height: 1500,
   },
   {
     title: "Compassion and Service Drive Law-Bound Leader",
@@ -74,6 +82,8 @@ export const newsEntries = [
     href: "https://www.nsls.org/news-and-events/compassion-and-service-drive-law-bound-leader",
     image: "/assets/abp/imgs/Member Spotligh-Rebekah Opher_Banner.png",
     alt: "Compassion and Service Drive Law-Bound Leader news thumbnail",
+    width: 1200,
+    height: 630,
   },
 ] satisfies readonly NewsEntry[];
 

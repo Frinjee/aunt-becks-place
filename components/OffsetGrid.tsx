@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { Reveal } from "@/components/Reveal";
 import { StoryCard } from "@/components/StoryCard";
 import { SundayDinner } from "@/components/SundayDinner";
 import { missionContent, storyContent } from "@/lib/content";
@@ -14,7 +13,7 @@ export function OffsetGrid() {
       </div>
 
       <div className="offset-grid">
-        <Reveal className="offset-grid__item offset-grid__item--story">
+        <div className="offset-grid__item offset-grid__item--story">
           <StoryCard title="Our Story" eyebrow="A Traditional Neighborhood Spot">
             {storyContent.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
@@ -34,11 +33,11 @@ export function OffsetGrid() {
               </Link>
             </div>
           </StoryCard>
-        </Reveal>
+        </div>
 
-        <Reveal className="offset-grid__item offset-grid__item--sunday" delay={1}>
+        <div className="offset-grid__item offset-grid__item--sunday">
           <SundayDinner />
-        </Reveal>
+        </div>
       </div>
     </section>
   );

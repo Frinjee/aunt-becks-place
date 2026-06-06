@@ -1,5 +1,4 @@
 import { MediaFeature } from "@/components/MediaFeature";
-import { Reveal } from "@/components/Reveal";
 import type { NewsEntry } from "@/lib/content";
 
 type NewsGridProps = {
@@ -13,10 +12,8 @@ export function NewsGrid({ entries }: NewsGridProps) {
 
   return (
     <div className="news-grid">
-      {sortedEntries.map((entry, index) => (
-        <Reveal key={entry.href} delay={index}>
-          <MediaFeature entry={entry} />
-        </Reveal>
+      {sortedEntries.map((entry) => (
+        <MediaFeature key={entry.href} entry={entry} />
       ))}
     </div>
   );

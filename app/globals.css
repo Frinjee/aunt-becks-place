@@ -410,20 +410,15 @@ figcaption,
   align-items: stretch;
 }
 
-.news-grid .reveal {
-  height: 100%;
-}
-
 .media-feature {
-  height: 100%;
-  min-height: 17.5rem;
+  height: auto;
   width: 100%;
   overflow: hidden;
   border-radius: 0.75rem;
 }
 
 .media-feature--large {
-  min-height: 34rem;
+  min-height: 0;
 }
 
 .media-feature a {
@@ -439,12 +434,16 @@ figcaption,
 }
 
 .media-feature__image {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--media-aspect, 16 / 9);
   overflow: hidden;
 }
 
 .media-feature__image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   filter: saturate(0.85);
   transition: transform 0.25s ease, filter 0.25s ease;
@@ -725,90 +724,6 @@ figcaption,
   margin-inline: auto;
 }
 
-.contact-form {
-  display: grid;
-  gap: var(--space-5);
-}
-
-.form-field {
-  display: grid;
-  gap: var(--space-2);
-  min-width: 0;
-}
-
-.form-field label,
-.form-note {
-  color: var(--color-text-muted);
-  font-family: var(--font-meta);
-  font-size: var(--text-small);
-  font-weight: 700;
-}
-
-.form-field input,
-.form-field select,
-.form-field textarea {
-  width: 100%;
-  min-height: 48px;
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: 0.9rem;
-  background: var(--color-white-soft);
-  color: var(--color-text);
-  font: inherit;
-}
-
-.form-field textarea {
-  resize: vertical;
-}
-
-.form-field input:focus-visible,
-.form-field select:focus-visible,
-.form-field textarea:focus-visible {
-  outline: 0.2rem solid var(--color-focus);
-  outline-offset: 0.18rem;
-}
-
-.form-field input:user-invalid,
-.form-field select:user-invalid,
-.form-field textarea:user-invalid {
-  border-color: var(--color-primary);
-}
-
-.contact-form__submit {
-  border: 0;
-  cursor: pointer;
-}
-
-.contact-form__submit:disabled {
-  cursor: wait;
-  opacity: 0.72;
-}
-
-.form-field__error,
-.form-feedback {
-  color: var(--color-primary);
-  font-family: var(--font-meta);
-  font-size: var(--text-small);
-  font-weight: 700;
-  margin: 0;
-  max-inline-size: 100%;
-  overflow-wrap: anywhere;
-}
-
-.form-feedback--success {
-  color: var(--color-text);
-}
-
-.form-field--honeypot {
-  block-size: 0;
-  inline-size: 0;
-  margin: 0;
-  opacity: 0;
-  overflow: hidden;
-  pointer-events: none;
-  position: absolute;
-}
-
 .site-footer {
   padding-top: var(--space-20);
 }
@@ -849,9 +764,12 @@ figcaption,
   text-decoration: none;
 }
 
-.social-button i {
+.social-button svg {
+  width: 1.15rem;
+  height: 1.15rem;
   font-size: 1.15rem;
   line-height: 1;
+  fill: currentColor;
 }
 
 .social-button:hover,

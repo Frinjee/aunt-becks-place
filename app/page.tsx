@@ -4,7 +4,6 @@ import { Hero } from "@/components/Hero";
 import { IndexRow } from "@/components/IndexRow";
 import { NewsGrid } from "@/components/NewsGrid";
 import { OffsetGrid } from "@/components/OffsetGrid";
-import { Reveal } from "@/components/Reveal";
 import { indexEntries, newsEntries } from "@/lib/content";
 
 export default function Home() {
@@ -22,9 +21,7 @@ export default function Home() {
             </div>
             <div className="index-list">
               {indexEntries.map((entry, index) => (
-                <Reveal key={`${entry.title}-${entry.date}`} delay={index}>
-                  <IndexRow entry={entry} index={index} />
-                </Reveal>
+                <IndexRow key={`${entry.title}-${entry.date}`} entry={entry} index={index} />
               ))}
             </div>
           </div>
