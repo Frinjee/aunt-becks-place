@@ -1,15 +1,4 @@
-import {
-  Body,
-  Container,
-  Head,
-  Heading,
-  Hr,
-  Html,
-  Link,
-  Preview,
-  Section,
-  Text,
-} from "jsx-email";
+import { Body, Container, Head, Heading, Hr, Html, Link, Preview, Section, Text } from "jsx-email";
 
 export type ContactFormEmailProps = {
   name: string;
@@ -130,7 +119,10 @@ export function ContactFormEmail({
                 margin: "0 0 16px",
               }}
             >
-              <Link href={`mailto:${email}`} style={{ color: accentColor, textDecoration: "underline" }}>
+              <Link
+                href={`mailto:${email}`}
+                style={{ color: accentColor, textDecoration: "underline" }}
+              >
                 {email}
               </Link>
             </Text>

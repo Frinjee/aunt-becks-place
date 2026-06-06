@@ -29,12 +29,7 @@ export function IndexRow({ entry, index }: IndexRowProps) {
   return (
     <div className="index-row-wrap">
       {entry.href ? (
-        <a
-          className="index-row"
-          href={entry.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="index-row" href={entry.href} target="_blank" rel="noopener noreferrer">
           {content}
         </a>
       ) : (

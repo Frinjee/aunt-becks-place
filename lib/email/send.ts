@@ -1,5 +1,6 @@
-import type { EmailMessage } from "@/lib/email/types";
 import { Resend } from "resend";
+
+import type { EmailMessage } from "@/lib/email/types";
 
 let resendClient: Resend | null = null;
 
@@ -56,6 +57,6 @@ export async function sendEmail(message: EmailMessage): Promise<void> {
   }
 
   throw new Error(
-    "EMAIL_PROVIDER is not configured. Set EMAIL_PROVIDER=log for local development or EMAIL_PROVIDER=resend for Resend delivery.",
+    "EMAIL_PROVIDER is not configured. Set EMAIL_PROVIDER=log for local development or EMAIL_PROVIDER=resend for Resend delivery."
   );
 }

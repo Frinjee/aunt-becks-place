@@ -3,10 +3,7 @@
 import { render, renderPlainText } from "jsx-email";
 
 import { ContactFormEmail } from "@/emails/ContactFormEmail";
-import {
-  parseContactSubmission,
-  type ContactActionState,
-} from "@/lib/contact/schema";
+import { parseContactSubmission, type ContactActionState } from "@/lib/contact/schema";
 import { getContactTopicLabel } from "@/lib/contact/topics";
 import { site } from "@/lib/content";
 import { sendEmail } from "@/lib/email/send";
@@ -21,7 +18,7 @@ function formatSubmittedAt(date: Date): string {
 
 export async function submitContactForm(
   _prevState: ContactActionState,
-  formData: FormData,
+  formData: FormData
 ): Promise<ContactActionState> {
   const parsed = parseContactSubmission(formData);
 

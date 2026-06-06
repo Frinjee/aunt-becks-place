@@ -4,9 +4,9 @@
   --color-text-muted: #76547d;
   --color-primary: #7c2d86;
   --color-primary-hover: #682370;
-  --color-card-surface: rgba(251, 247, 251, .78);
+  --color-card-surface: rgba(251, 247, 251, 0.78);
   --color-border: rgba(84, 42, 90, 0.18);
-  --color-divider: rgba(84, 42, 90, 0.20);
+  --color-divider: rgba(84, 42, 90, 0.2);
   --color-focus: rgba(124, 45, 134, 0.36);
   --color-white: #ffffff;
   --color-white-soft: rgba(255, 255, 255, 0.72);

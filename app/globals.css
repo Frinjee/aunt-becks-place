@@ -36,7 +36,10 @@ a {
   text-decoration-color: var(--color-border);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
-  transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 a:hover {
@@ -79,7 +82,6 @@ h1 {
   max-width: 11ch;
   font-size: var(--text-title);
 }
-
 
 h2 {
   font-size: var(--text-heading);
@@ -322,7 +324,9 @@ ul {
   background: var(--color-card-surface);
   box-shadow: var(--shadow-card);
   text-decoration: none;
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .index-row:hover,
@@ -446,7 +450,9 @@ figcaption,
   height: 100%;
   object-fit: cover;
   filter: saturate(0.85);
-  transition: transform 0.25s ease, filter 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
 }
 
 .media-feature a:hover .media-feature__image img,

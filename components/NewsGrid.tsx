@@ -7,7 +7,7 @@ type NewsGridProps = {
 
 export function NewsGrid({ entries }: NewsGridProps) {
   const sortedEntries = [...entries].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
   return (

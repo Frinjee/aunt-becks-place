@@ -3,7 +3,8 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 
-import { submitContactForm } from "@/app/contact/actions";
+import type { submitContactForm } from "@/app/contact/actions";
+import styles from "@/components/ContactForm.module.css";
 import {
   initialContactActionState,
   type ContactActionState,
@@ -11,7 +12,6 @@ import {
 } from "@/lib/contact/schema";
 import { contactTopics } from "@/lib/contact/topics";
 import { site } from "@/lib/content";
-import styles from "@/components/ContactForm.module.css";
 
 type ContactFormProps = {
   action: typeof submitContactForm;
@@ -39,7 +39,7 @@ function fieldErrorId(field: ContactField): string {
 export function ContactForm({ action }: ContactFormProps) {
   const [state, formAction] = useActionState<ContactActionState, FormData>(
     action,
-    initialContactActionState,
+    initialContactActionState
   );
 
   return (

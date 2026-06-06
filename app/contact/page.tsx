@@ -1,7 +1,7 @@
+import { submitContactForm } from "@/app/contact/actions";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
-import { submitContactForm } from "@/app/contact/actions";
 
 export const metadata = {
   title: "Contact | Aunt Becks Place",
@@ -14,8 +14,8 @@ export default function ContactPage() {
       <section className="page-hero contact-hero" aria-labelledby="contact-title">
         <h1 id="contact-title">Connect with Aunt Becks Place</h1>
         <p>
-          Reach out about volunteering, donations, Sunday dinners, or ways to support community
-          care in Baltimore City.
+          Reach out about volunteering, donations, Sunday dinners, or ways to support community care
+          in Baltimore City.
         </p>
       </section>
 

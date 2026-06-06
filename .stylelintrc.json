@@ -1,0 +1,19 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-clean-order"],
+  "ignoreFiles": [".next/**/*", "node_modules/**/*"],
+  "rules": {
+    "order/order": null,
+    "order/properties-order": null,
+    "selector-class-pattern": null,
+    "custom-property-empty-line-before": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "no-descending-specificity": null,
+    "import-notation": null,
+    "value-keyword-case": null,
+    "media-feature-range-notation": null,
+    "color-function-alias-notation": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "color-hex-length": null
+  }
+}

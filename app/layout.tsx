@@ -59,10 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${gtmId}');`;
 
   return (
-    <html
-      lang="en"
-      className={`${lexend.variable} ${inclusiveSans.variable} ${atkinson.variable}`}
-    >
+    <html lang="en" className={`${lexend.variable} ${inclusiveSans.variable} ${atkinson.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: gtmScript }} />
       </head>

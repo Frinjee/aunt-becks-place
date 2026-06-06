@@ -118,8 +118,7 @@ export const missionContent = {
     "Practicing restorative justice through acts of love by building community and mutual aid, restoring connection through Sunday dinners, increasing access to resources and networking opportunities, and helping restore the social fabric of Baltimore City.",
   vision:
     "To be the heart and soul of the community, providing access to services, opportunities, and education that empower residents to work collaboratively, strengthen neighborhood connections, and restore existing communities throughout Baltimore City.",
-  join:
-    "If you practice servant leadership, have donations to share, or would like to volunteer your time and talents, we invite you to connect with us and become part of the village. Together, we can strengthen community, share resources, and create lasting change throughout Baltimore City.",
+  join: "If you practice servant leadership, have donations to share, or would like to volunteer your time and talents, we invite you to connect with us and become part of the village. Together, we can strengthen community, share resources, and create lasting change throughout Baltimore City.",
   labels: ["Community care", "Restorative justice"],
 } as const;
 

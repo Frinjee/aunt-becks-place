@@ -1,4 +1,3 @@
-import { EditorialLine } from "@/components/EditorialLine";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { IndexRow } from "@/components/IndexRow";
