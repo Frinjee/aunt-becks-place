@@ -91,7 +91,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </Link>
             <div className="site-header__links">
               <Link href="/about">About</Link>
-              <Link href="/contact">Contact</Link>
+              <Link href="/contact" prefetch={false}>
+                Contact
+              </Link>
               <Link href="/events">Events</Link>
               <Link href="/#media">Press</Link>
               <Link href="/donate">Donate</Link>
