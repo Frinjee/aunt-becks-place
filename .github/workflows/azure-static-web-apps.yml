@@ -39,8 +39,10 @@ jobs:
 
       - name: Deploy production
         if: github.event_name == 'push'
-        run: swa deploy . --deployment-token "${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}" --env production
+        working-directory: ..
+        run: swa deploy aunt-becks-place --deployment-token "${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}" --env production --api-language node --api-version 22
 
       - name: Deploy pull request preview
         if: github.event_name == 'pull_request'
-        run: swa deploy . --deployment-token "${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}" --env "pr-${{ github.event.pull_request.number }}"
+        working-directory: ..
+        run: swa deploy aunt-becks-place --deployment-token "${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}" --env "pr-${{ github.event.pull_request.number }}" --api-language node --api-version 22
