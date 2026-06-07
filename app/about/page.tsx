@@ -11,9 +11,11 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="page-hero" aria-labelledby="about-title">
+      <section className="page-hero page-hero--contact-match" aria-labelledby="about-title">
         <p className="eyebrow">{site.eyebrow}</p>
-        <h1 id="about-title">About Aunt Becks Place</h1>
+        <h1 id="about-title" className="page-hero__title--contact-match">
+          About Aunt Becks Place
+        </h1>
         <p>{site.manifesto}</p>
       </section>
 

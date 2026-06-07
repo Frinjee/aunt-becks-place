@@ -11,9 +11,11 @@ export const metadata = {
 export default function DonatePage() {
   return (
     <>
-      <section className="page-hero" aria-labelledby="donate-title">
+      <section className="page-hero page-hero--contact-match" aria-labelledby="donate-title">
         <p className="eyebrow">Donations Welcome</p>
-        <h1 id="donate-title">Support Aunt Becks Place</h1>
+        <h1 id="donate-title" className="page-hero__title--contact-match">
+          Support Aunt Becks Place
+        </h1>
         <p>
           If you practice servant leadership, have donations, or want to volunteer your time and
           talent, connect at <a href={`mailto:${site.email}`}>{site.email}</a>.

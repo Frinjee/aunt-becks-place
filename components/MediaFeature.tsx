@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { CSSProperties } from "react";
 
 import type { NewsEntry } from "@/lib/content";
 
@@ -9,14 +8,10 @@ type MediaFeatureProps = {
 };
 
 export function MediaFeature({ entry, featured = false }: MediaFeatureProps) {
-  const imageStyle = {
-    "--media-aspect": `${entry.width} / ${entry.height}`,
-  } as CSSProperties;
-
   return (
     <article className={featured ? "media-feature media-feature--large" : "media-feature"}>
       <a href={entry.href} target="_blank" rel="noopener noreferrer">
-        <span className="media-feature__image" style={imageStyle}>
+        <span className="media-feature__image">
           <Image
             src={entry.image}
             alt={entry.alt}

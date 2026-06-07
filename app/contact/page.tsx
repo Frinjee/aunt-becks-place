@@ -11,8 +11,10 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="page-hero contact-hero" aria-labelledby="contact-title">
-        <h1 id="contact-title">Connect with Aunt Becks Place</h1>
+      <section className="page-hero page-hero--contact-match" aria-labelledby="contact-title">
+        <h1 id="contact-title" className="page-hero__title--contact-match">
+          Connect with Aunt Becks Place
+        </h1>
         <p>
           Reach out about volunteering, donations, Sunday dinners, or ways to support community care
           in Baltimore City.

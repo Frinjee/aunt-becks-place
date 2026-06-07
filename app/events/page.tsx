@@ -12,9 +12,11 @@ export const metadata = {
 export default function EventsPage() {
   return (
     <>
-      <section className="page-hero" aria-labelledby="events-title">
+      <section className="page-hero page-hero--contact-match" aria-labelledby="events-title">
         <p className="eyebrow">Events</p>
-        <h1 id="events-title">Community calendar</h1>
+        <h1 id="events-title" className="page-hero__title--contact-match">
+          Community calendar
+        </h1>
         <p>{site.manifesto}</p>
       </section>
 

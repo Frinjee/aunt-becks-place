@@ -64,7 +64,7 @@ export const newsEntries = [
     height: 542,
   },
   {
-    title: "Connections, Opportunities Propel Graduate's Ambition",
+    title: "Connections, Opportunities Propel Graduate's...",
     category: "Press",
     date: "06/05/2025",
     source: "UBalt Student Stories",
