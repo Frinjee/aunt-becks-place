@@ -23,9 +23,9 @@ export const metadata: Metadata = {
       "Aunt Becks Place is a traditional neighborhood spot in Baltimore where neighbors gather for Sunday Dinners, mutual care, and restorative justice. Everyone belongs here.",
     images: [
       {
-        url: "https://www.auntbecksplace.live/images/about-og.jpg",
-        width: 1200,
-        height: 630,
+        url: site.openGraphImage,
+        width: site.openGraphImageWidth,
+        height: site.openGraphImageHeight,
       },
     ],
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "About Aunt Becks Place | Restorative Justice & Mutual Aid in Baltimore",
     description:
       "Our story, mission, and vision: restore the village one meal at a time through Sunday Dinners, mutual care, and community in Baltimore City.",
-    images: ["https://www.auntbecksplace.live/images/about-og.jpg"],
+    images: [site.openGraphImage],
   },
 };
 

@@ -13,7 +13,7 @@ export function Hero() {
           width={1376}
           height={768}
           priority
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 56rem"
         />
       </h1>
     </section>

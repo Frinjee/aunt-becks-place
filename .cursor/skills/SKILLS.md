@@ -15,6 +15,19 @@ Skills are invoked contextually by Cursor — not always. Each skill file docume
 | `skills/abp-component-build.md` | Building or revising any component in `components/` |
 | `skills/abp-spec-plan.md` | Starting a new feature, page, or architectural change |
 | `skills/abp-performance-a11y.md` | Auditing, optimizing, or reviewing UI output |
+| `skills/audit_accessibility_wcag_nonprofit.md` | Auditing WCAG accessibility, implementing foundational SEO, or generating a staged SEO/growth roadmap for the non‑profit site |
+
+---
+
+## Accessibility Enhancement Layer
+
+Use these together when a task touches public-facing UI, content, donation paths, contact paths, or route metadata.
+
+- Start with `skills/abp-spec-plan.md` when the work changes a page, feature, IA, or user journey.
+- Attach `skills/abp-component-build.md` for component-level semantics, accessible names, focus behavior, image handling, and overflow checks.
+- Attach `skills/abp-performance-a11y.md` for WCAG 2.2 AA, Core Web Vitals, viewport, zoom, forced-colors, and assistive technology verification.
+- Attach `skills/audit_accessibility_wcag_nonprofit.md` when the outcome affects nonprofit trust, donor confidence, local discoverability, privacy, plain language, or community access.
+- Keep all additions compatible with the visual-impact limit and the no-overflow-scrollbar rule.
 
 ---
 

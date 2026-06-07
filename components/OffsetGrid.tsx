@@ -16,16 +16,16 @@ export function OffsetGrid() {
             ))}
             <EditorialLine />
             <p className="meta-label">Gather the village, nourish your spirit</p>
-            <h2>Mission</h2>
+            <h3>Mission</h3>
             <EditorialLine className="editorial-line--title" />
-            <h3>Restorative Justice</h3>
+            <h4>Restorative Justice</h4>
             <p>{missionContent.mission}</p>
-            <h3>Vision</h3>
+            <h4>Vision</h4>
             <p>{missionContent.vision}</p>
-            <h3>Join Our Village</h3>
+            <h4>Join Our Village</h4>
             <p>{missionContent.join}</p>
             <div className="story-card__footer">
-              <h3>Mutual aid</h3>
+              <h4>Mutual aid</h4>
               <p>
                 Donations welcome. Your gift fuels mutual aid and Sunday Dinners for Baltimore
                 neighbors.

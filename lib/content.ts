@@ -33,6 +33,9 @@ export const site = {
   brandMark: "/assets/abp/imgs/x-street.webp",
   headerLogo: "/assets/abp/imgs/the-block.webp",
   heroLogo: "/assets/abp/imgs/abp-logo-1.webp",
+  openGraphImage: "/assets/abp/imgs/abp-logo-1.webp",
+  openGraphImageWidth: 1376,
+  openGraphImageHeight: 768,
   manifesto:
     "To practice restorative justice as acts of love by building community mutual aid, restoring through Sunday dinners, access to resources, and networking, and restoring the social fabric of Baltimore City.",
   description:

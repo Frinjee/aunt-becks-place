@@ -4,6 +4,7 @@ import { submitContactForm } from "@/app/contact/actions";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
+import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: {
@@ -23,9 +24,9 @@ export const metadata: Metadata = {
       "Reach out to Aunt Becks Place in Baltimore about Sunday Dinners, volunteering, donations, or partnering to restore the village one meal at a time.",
     images: [
       {
-        url: "https://www.auntbecksplace.live/images/contact-og.jpg",
-        width: 1200,
-        height: 630,
+        url: site.openGraphImage,
+        width: site.openGraphImageWidth,
+        height: site.openGraphImageHeight,
       },
     ],
   },
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     title: "Contact Aunt Becks Place | Get in Touch in Baltimore",
     description:
       "Contact Aunt Becks Place about Sunday Dinners, mutual care, volunteering, or donations in Baltimore City.",
-    images: ["https://www.auntbecksplace.live/images/contact-og.jpg"],
+    images: [site.openGraphImage],
   },
 };
 

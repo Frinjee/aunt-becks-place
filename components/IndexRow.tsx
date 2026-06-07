@@ -1,4 +1,5 @@
 import { EditorialLine } from "@/components/EditorialLine";
+import { OpensInNewTab } from "@/components/ui/OpensInNewTab";
 import type { IndexEntry } from "@/lib/content";
 
 type IndexRowProps = {
@@ -31,6 +32,7 @@ export function IndexRow({ entry, index }: IndexRowProps) {
       {entry.href ? (
         <a className="index-row" href={entry.href} target="_blank" rel="noopener noreferrer">
           {content}
+          <OpensInNewTab />
         </a>
       ) : (
         <div className="index-row">{content}</div>

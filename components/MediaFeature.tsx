@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { OpensInNewTab } from "@/components/ui/OpensInNewTab";
 import type { NewsEntry } from "@/lib/content";
 
 type MediaFeatureProps = {
@@ -11,6 +12,7 @@ export function MediaFeature({ entry, featured = false }: MediaFeatureProps) {
   return (
     <article className={featured ? "media-feature media-feature--large" : "media-feature"}>
       <a href={entry.href} target="_blank" rel="noopener noreferrer">
+        <OpensInNewTab />
         <span className="media-feature__image">
           <Image
             src={entry.image}

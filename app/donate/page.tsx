@@ -23,9 +23,9 @@ export const metadata: Metadata = {
       "Your gift fuels Sunday Dinners and mutual care that restore the village one meal at a time for Baltimore neighbors.",
     images: [
       {
-        url: "https://www.auntbecksplace.live/images/donate-og.jpg",
-        width: 1200,
-        height: 630,
+        url: site.openGraphImage,
+        width: site.openGraphImageWidth,
+        height: site.openGraphImageHeight,
       },
     ],
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Donate to Feed Our Neighbors in Baltimore | Aunt Becks Place",
     description:
       "Support Sunday Dinners and mutual aid that nourish Baltimore neighbors and restore the village one meal at a time.",
-    images: ["https://www.auntbecksplace.live/images/donate-og.jpg"],
+    images: [site.openGraphImage],
   },
 };
 

@@ -13,7 +13,7 @@ export function SocialButton({ href, label, children }: SocialButtonProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={label}
+      aria-label={`${label} (opens in new tab)`}
     >
       {children}
     </a>

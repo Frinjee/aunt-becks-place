@@ -26,7 +26,7 @@ export function Footer() {
       <EditorialLine />
       <div className="site-footer__inner">
         <p className="site-footer__note">
-          Made with 💜
+          Made with <span aria-hidden="true">💜</span>
           <br />
           {site.name} ©2026
         </p>

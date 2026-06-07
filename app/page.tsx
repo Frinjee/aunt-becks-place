@@ -5,7 +5,7 @@ import { Hero } from "@/components/Hero";
 import { IndexRow } from "@/components/IndexRow";
 import { NewsGrid } from "@/components/NewsGrid";
 import { OffsetGrid } from "@/components/OffsetGrid";
-import { indexEntries, newsEntries } from "@/lib/content";
+import { indexEntries, newsEntries, site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: {
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
       "Restore the village one meal at a time. Join Aunt Becks Place in Baltimore for free Sunday Dinners, mutual care, and a traditional neighborhood gathering place where everyone belongs.",
     images: [
       {
-        url: "https://www.auntbecksplace.live/images/home-og.jpg",
-        width: 1200,
-        height: 630,
+        url: site.openGraphImage,
+        width: site.openGraphImageWidth,
+        height: site.openGraphImageHeight,
       },
     ],
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
     description:
       "Aunt Becks Place restores the village one meal at a time with free Sunday Dinners and mutual care in Baltimore City.",
-    images: ["https://www.auntbecksplace.live/images/home-og.jpg"],
+    images: [site.openGraphImage],
   },
 };
 
