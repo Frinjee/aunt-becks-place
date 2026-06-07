@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "About Aunt Becks Place | Restorative Justice & Mutual Aid in Baltimore",
   },
   description:
-    "Learn about Aunt Becks Place, a Baltimore-based mutual-aid nonprofit practicing restorative justice through Sunday dinners, community care, and support for homeless neighbors.",
+    "Learn about Aunt Becks Place, a traditional neighborhood spot in Baltimore restoring the village one meal at a time through Sunday Dinners, mutual care, and restorative justice.",
   alternates: {
     canonical: "https://www.auntbecksplace.live/about",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://www.auntbecksplace.live/about",
     title: "About Aunt Becks Place | Restorative Justice & Mutual Aid in Baltimore",
     description:
-      "Aunt Becks Place is a traditional neighborhood gathering place in Baltimore where everyone is welcomed, loved, and belongs—practicing restorative justice through Sunday dinners and mutual-aid community support.",
+      "Aunt Becks Place is a traditional neighborhood spot in Baltimore where neighbors gather for Sunday Dinners, mutual care, and restorative justice. Everyone belongs here.",
     images: [
       {
         url: "https://www.auntbecksplace.live/images/about-og.jpg",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Aunt Becks Place | Restorative Justice & Mutual Aid in Baltimore",
     description:
-      "Get to know Aunt Becks Place—our story, mission, and vision to restore the social fabric of Baltimore City through community, meals, and love.",
+      "Our story, mission, and vision: restore the village one meal at a time through Sunday Dinners, mutual care, and community in Baltimore City.",
     images: ["https://www.auntbecksplace.live/images/about-og.jpg"],
   },
 };

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     absolute: "Community Events & Fundraisers in Baltimore | Aunt Becks Place",
   },
   description:
-    "Stay up to date on Aunt Becks Place events in Baltimore—from community BBQs and fundraisers to special Sunday dinners and mutual-aid gatherings.",
+    "Stay up to date on Aunt Becks Place events in Baltimore, from community BBQs and fundraisers to Sunday Dinners and village gatherings.",
   alternates: {
     canonical: "https://www.auntbecksplace.live/events",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://www.auntbecksplace.live/events",
     title: "Community Events & Fundraisers in Baltimore | Aunt Becks Place",
     description:
-      "See upcoming events with Aunt Becks Place in Baltimore, including community BBQs, fundraisers, and special Sunday dinners that support our homeless and food-insecure neighbors.",
+      "See upcoming Aunt Becks Place events in Baltimore, including community BBQs, fundraisers, and Sunday Dinners that nourish neighbors and restore the village.",
     images: [
       {
         url: "https://www.auntbecksplace.live/images/events-og.jpg",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Community Events & Fundraisers in Baltimore | Aunt Becks Place",
     description:
-      "Discover Aunt Becks Place events in Baltimore—BBQs, fundraisers, and special Sunday dinners that bring the community together.",
+      "Discover Aunt Becks Place events in Baltimore. BBQs, fundraisers, and Sunday Dinners that gather the village.",
     images: ["https://www.auntbecksplace.live/images/events-og.jpg"],
   },
 };

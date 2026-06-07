@@ -23,7 +23,7 @@ export function Donations({ showCodes = true }: DonationsProps) {
         </div>
       ) : (
         <div className="donations__summary">
-          <p>Support Aunt Becks Place mutual aid and Sunday dinner work.</p>
+          <p>Support Sunday Dinners and mutual aid that restore the village one meal at a time.</p>
           <Link className="donations__link" href="/donate">
             Donate
           </Link>

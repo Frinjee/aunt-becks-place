@@ -35,7 +35,8 @@ export const site = {
   heroLogo: "/assets/abp/imgs/abp-logo-1.webp",
   manifesto:
     "To practice restorative justice as acts of love by building community mutual aid, restoring through Sunday dinners, access to resources, and networking, and restoring the social fabric of Baltimore City.",
-  description: "Aunt Becks Place community support and neighborhood care page.",
+  description:
+    "Aunt Becks Place is a traditional neighborhood spot in Baltimore, restoring the village one meal at a time through Sunday Dinners and mutual care.",
   facebook: "https://www.facebook.com/AuntBecksPlace/",
   instagram: "https://www.instagram.com/auntbecksplace/",
 } as const;
@@ -118,7 +119,7 @@ export const missionContent = {
     "Practicing restorative justice through acts of love by building community and mutual aid, restoring connection through Sunday dinners, increasing access to resources and networking opportunities, and helping restore the social fabric of Baltimore City.",
   vision:
     "To be the heart and soul of the community, providing access to services, opportunities, and education that empower residents to work collaboratively, strengthen neighborhood connections, and restore existing communities throughout Baltimore City.",
-  join: "If you practice servant leadership, have donations to share, or would like to volunteer your time and talents, we invite you to connect with us and become part of the village. Together, we can strengthen community, share resources, and create lasting change throughout Baltimore City.",
+  join: "Practice servant leadership with us. Share your time, donations, or talents and become part of the village. Together we nourish neighbors through Sunday Dinners, mutual aid, and the care we give one another.",
   labels: ["Community care", "Restorative justice"],
 } as const;
 
@@ -130,7 +131,7 @@ export const storyContent = [
 export const sundayDinner = {
   title: "Sunday Dinner",
   lines: [
-    "Serving Sunday dinner between 2:30 and 4:00 PM.",
+    "Serving Sunday Dinner between 2:30 and 4:00 PM.",
     "Near St. Vincent de Paul",
     "120 N Front Street",
     "Baltimore, Maryland 21202.",

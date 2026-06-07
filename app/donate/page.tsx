@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "Support Grassroots Mutual Aid in Baltimore | Give To Aunt Becks Place",
   },
   description:
-    "Give today to support free Sunday dinners and mutual-aid food programs for homeless and food-insecure neighbors in Baltimore City.",
+    "Give today to support Sunday Dinners and mutual aid that help Baltimore neighbors get the food and resources they need to thrive.",
   alternates: {
     canonical: "https://www.auntbecksplace.live/donate",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://www.auntbecksplace.live/donate",
     title: "Donate to Feed Our Neighbors in Baltimore | Aunt Becks Place",
     description:
-      "Your gift helps provide free Sunday dinners, hot meals, and community support for homeless and food-insecure neighbors in Baltimore City.",
+      "Your gift fuels Sunday Dinners and mutual care that restore the village one meal at a time for Baltimore neighbors.",
     images: [
       {
         url: "https://www.auntbecksplace.live/images/donate-og.jpg",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Donate to Feed Our Neighbors in Baltimore | Aunt Becks Place",
     description:
-      "Support free Sunday dinners and mutual-aid food programs for our homeless and food-insecure neighbors in Baltimore City.",
+      "Support Sunday Dinners and mutual aid that nourish Baltimore neighbors and restore the village one meal at a time.",
     images: ["https://www.auntbecksplace.live/images/donate-og.jpg"],
   },
 };

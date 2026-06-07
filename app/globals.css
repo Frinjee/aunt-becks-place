@@ -590,6 +590,19 @@ figcaption,
   margin-bottom: var(--space-5);
 }
 
+.editorial-line--title {
+  margin-bottom: var(--space-5);
+}
+
+.story-card__body .editorial-line--title {
+  margin-top: calc(-1 * var(--space-4));
+  margin-bottom: calc(var(--space-5) - var(--space-4));
+}
+
+.sunday-dinner .editorial-line--title {
+  margin-bottom: var(--space-5);
+}
+
 .story-card__body {
   display: grid;
   gap: var(--space-4);

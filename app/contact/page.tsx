@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "Contact Aunt Becks Place | Get in Touch in Baltimore",
   },
   description:
-    "Contact Aunt Becks Place in Baltimore to ask about Sunday dinner, volunteering, donations, partnerships, or community support.",
+    "Contact Aunt Becks Place in Baltimore about Sunday Dinners, volunteering, donations, partnerships, or joining the village.",
   alternates: {
     canonical: "https://www.auntbecksplace.live/contact",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://www.auntbecksplace.live/contact",
     title: "Contact Aunt Becks Place | Get in Touch in Baltimore",
     description:
-      "Reach out to Aunt Becks Place in Baltimore with questions about free Sunday dinner, volunteering, donations, or partnering to support our neighbors.",
+      "Reach out to Aunt Becks Place in Baltimore about Sunday Dinners, volunteering, donations, or partnering to restore the village one meal at a time.",
     images: [
       {
         url: "https://www.auntbecksplace.live/images/contact-og.jpg",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Aunt Becks Place | Get in Touch in Baltimore",
     description:
-      "Contact Aunt Becks Place to learn more about Sunday dinner, mutual-aid support, volunteering, or making a donation in Baltimore City.",
+      "Contact Aunt Becks Place about Sunday Dinners, mutual care, volunteering, or donations in Baltimore City.",
     images: ["https://www.auntbecksplace.live/images/contact-og.jpg"],
   },
 };
@@ -46,8 +46,8 @@ export default function ContactPage() {
           Connect with Aunt Becks Place
         </h1>
         <p>
-          Reach out about volunteering, donations, Sunday dinners, or ways to support community care
-          in Baltimore City.
+          Reach out about Sunday Dinners, volunteering, donations, or ways to join the village and
+          support neighbors in Baltimore City.
         </p>
       </section>
 

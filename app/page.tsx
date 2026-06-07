@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     absolute: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
   },
   description:
-    "Aunt Becks Place is a neighborhood gathering place in Baltimore offering free Sunday dinners, mutual-aid support, and restorative-justice community care for homeless and food-insecure neighbors.",
+    "Aunt Becks Place is a traditional neighborhood spot in Baltimore. We restore the village one meal at a time with free Sunday Dinners, mutual care, and restorative justice for neighbors who need food and resources to thrive.",
   alternates: {
     canonical: "https://www.auntbecksplace.live/",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://www.auntbecksplace.live/",
     title: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
     description:
-      "Where everyone is welcomed, loved, and belongs. Join Aunt Becks Place in Baltimore for free Sunday dinners, mutual-aid support, and restorative-justice community care.",
+      "Restore the village one meal at a time. Join Aunt Becks Place in Baltimore for free Sunday Dinners, mutual care, and a traditional neighborhood gathering place where everyone belongs.",
     images: [
       {
         url: "https://www.auntbecksplace.live/images/home-og.jpg",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
     description:
-      "Aunt Becks Place nurtures the village one meal at a time with free Sunday dinners and mutual-aid community care in Baltimore City.",
+      "Aunt Becks Place restores the village one meal at a time with free Sunday Dinners and mutual care in Baltimore City.",
     images: ["https://www.auntbecksplace.live/images/home-og.jpg"],
   },
 };

@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 alt=""
                 width={1376}
                 height={768}
-                sizes="64px"
+                sizes="84px"
               />
             </Link>
             <div className="site-header__links">
