@@ -1,9 +1,44 @@
+import type { Metadata } from "next";
+
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { IndexRow } from "@/components/IndexRow";
 import { NewsGrid } from "@/components/NewsGrid";
 import { OffsetGrid } from "@/components/OffsetGrid";
 import { indexEntries, newsEntries } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
+  },
+  description:
+    "Aunt Becks Place is a neighborhood gathering place in Baltimore offering free Sunday dinners, mutual-aid support, and restorative-justice community care for homeless and food-insecure neighbors.",
+  alternates: {
+    canonical: "https://www.auntbecksplace.live/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Aunt Becks Place",
+    url: "https://www.auntbecksplace.live/",
+    title: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
+    description:
+      "Where everyone is welcomed, loved, and belongs. Join Aunt Becks Place in Baltimore for free Sunday dinners, mutual-aid support, and restorative-justice community care.",
+    images: [
+      {
+        url: "https://www.auntbecksplace.live/images/home-og.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
+    description:
+      "Aunt Becks Place nurtures the village one meal at a time with free Sunday dinners and mutual-aid community care in Baltimore City.",
+    images: ["https://www.auntbecksplace.live/images/home-og.jpg"],
+  },
+};
 
 export default function Home() {
   return (

@@ -1,11 +1,41 @@
+import type { Metadata } from "next";
+
 import { submitContactForm } from "@/app/contact/actions";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 
-export const metadata = {
-  title: "Contact | Aunt Becks Place",
-  description: "Contact Aunt Becks Place about volunteering, donations, and community care.",
+export const metadata: Metadata = {
+  title: {
+    absolute: "Contact Aunt Becks Place | Get in Touch in Baltimore",
+  },
+  description:
+    "Contact Aunt Becks Place in Baltimore to ask about Sunday dinner, volunteering, donations, partnerships, or community support.",
+  alternates: {
+    canonical: "https://www.auntbecksplace.live/contact",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Aunt Becks Place",
+    url: "https://www.auntbecksplace.live/contact",
+    title: "Contact Aunt Becks Place | Get in Touch in Baltimore",
+    description:
+      "Reach out to Aunt Becks Place in Baltimore with questions about free Sunday dinner, volunteering, donations, or partnering to support our neighbors.",
+    images: [
+      {
+        url: "https://www.auntbecksplace.live/images/contact-og.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Aunt Becks Place | Get in Touch in Baltimore",
+    description:
+      "Contact Aunt Becks Place to learn more about Sunday dinner, mutual-aid support, volunteering, or making a donation in Baltimore City.",
+    images: ["https://www.auntbecksplace.live/images/contact-og.jpg"],
+  },
 };
 
 export default function ContactPage() {

@@ -1,12 +1,42 @@
+import type { Metadata } from "next";
+
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { StoryCard } from "@/components/StoryCard";
 import { SundayDinner } from "@/components/SundayDinner";
 import { eventEntries, site } from "@/lib/content";
 
-export const metadata = {
-  title: "Events | Aunt Becks Place",
-  description: "Upcoming community events and Sunday Dinner details for Aunt Becks Place.",
+export const metadata: Metadata = {
+  title: {
+    absolute: "Community Events & Fundraisers in Baltimore | Aunt Becks Place",
+  },
+  description:
+    "Stay up to date on Aunt Becks Place events in Baltimore—from community BBQs and fundraisers to special Sunday dinners and mutual-aid gatherings.",
+  alternates: {
+    canonical: "https://www.auntbecksplace.live/events",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Aunt Becks Place",
+    url: "https://www.auntbecksplace.live/events",
+    title: "Community Events & Fundraisers in Baltimore | Aunt Becks Place",
+    description:
+      "See upcoming events with Aunt Becks Place in Baltimore, including community BBQs, fundraisers, and special Sunday dinners that support our homeless and food-insecure neighbors.",
+    images: [
+      {
+        url: "https://www.auntbecksplace.live/images/events-og.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Community Events & Fundraisers in Baltimore | Aunt Becks Place",
+    description:
+      "Discover Aunt Becks Place events in Baltimore—BBQs, fundraisers, and special Sunday dinners that bring the community together.",
+    images: ["https://www.auntbecksplace.live/images/events-og.jpg"],
+  },
 };
 
 export default function EventsPage() {

@@ -1,11 +1,41 @@
+import type { Metadata } from "next";
+
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { StoryCard } from "@/components/StoryCard";
 import { missionContent, site, storyContent } from "@/lib/content";
 
-export const metadata = {
-  title: "About | Aunt Becks Place",
-  description: "Mission, vision, and story for Aunt Becks Place.",
+export const metadata: Metadata = {
+  title: {
+    absolute: "About Aunt Becks Place | Restorative Justice & Mutual Aid in Baltimore",
+  },
+  description:
+    "Learn about Aunt Becks Place, a Baltimore-based mutual-aid nonprofit practicing restorative justice through Sunday dinners, community care, and support for homeless neighbors.",
+  alternates: {
+    canonical: "https://www.auntbecksplace.live/about",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Aunt Becks Place",
+    url: "https://www.auntbecksplace.live/about",
+    title: "About Aunt Becks Place | Restorative Justice & Mutual Aid in Baltimore",
+    description:
+      "Aunt Becks Place is a traditional neighborhood gathering place in Baltimore where everyone is welcomed, loved, and belongs—practicing restorative justice through Sunday dinners and mutual-aid community support.",
+    images: [
+      {
+        url: "https://www.auntbecksplace.live/images/about-og.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Aunt Becks Place | Restorative Justice & Mutual Aid in Baltimore",
+    description:
+      "Get to know Aunt Becks Place—our story, mission, and vision to restore the social fabric of Baltimore City through community, meals, and love.",
+    images: ["https://www.auntbecksplace.live/images/about-og.jpg"],
+  },
 };
 
 export default function AboutPage() {
