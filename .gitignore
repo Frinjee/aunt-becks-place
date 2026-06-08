@@ -26,7 +26,6 @@ Thumbs.db
 .vscode/*
 !.vscode/settings.json
 .cursor/
-.cursor/*
 
 aunt-becks-place.code-workspace
 index.html
