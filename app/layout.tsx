@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 
 import "@/app/globals.css";
 
+import { SocialLinks } from "@/components/SocialLinks";
 import { site } from "@/lib/content";
 
 const lexend = Lexend({
@@ -79,16 +80,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </a>
         <header className="site-header">
           <nav className="site-header__nav" aria-label="Site">
-            <Link className="site-header__brand" href="/" aria-label={`${site.name} home`}>
-              <Image
-                className="site-header__brand-icon"
-                src={site.headerLogo}
-                alt=""
-                width={1376}
-                height={768}
-                sizes="84px"
-              />
-            </Link>
+            <div className="site-header__top">
+              <Link className="site-header__brand" href="/" aria-label={`${site.name} home`}>
+                <Image
+                  className="site-header__brand-icon"
+                  src={site.headerLogo}
+                  alt=""
+                  width={1376}
+                  height={768}
+                  sizes="84px"
+                />
+              </Link>
+              <SocialLinks className="site-header__socials" />
+            </div>
             <div className="site-header__links">
               <Link href="/about">About</Link>
               <Link href="/contact" prefetch={false}>

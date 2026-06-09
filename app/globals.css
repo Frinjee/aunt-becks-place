@@ -180,6 +180,15 @@ ul {
   gap: var(--space-2);
 }
 
+.site-header__top {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
 .site-header__links {
   display: flex;
   flex-wrap: wrap;
@@ -187,6 +196,19 @@ ul {
   justify-content: center;
   gap: var(--space-3);
   max-width: 100%;
+}
+
+.site-header__socials {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  max-width: 100%;
+  transform: translate(min(36vw, 25rem, calc(50vw - 7rem)), -50%);
 }
 
 .site-header__nav a,
