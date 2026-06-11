@@ -50,4 +50,5 @@
   --shadow-card: 0 1.5rem 4rem rgba(82, 50, 91, 0.12);
   --shadow-nav: 0 0.65rem 1.6rem rgba(124, 75, 140, 0.2), 0 0.2rem 0.45rem rgba(124, 75, 140, 0.1);
   --content-width: 1180px;
+  --site-header-offset: 0;
 }

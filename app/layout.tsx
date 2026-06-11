@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible, Inclusive_Sans, Lexend } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 import "@/app/globals.css";
 
+import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/lib/content";
 
 const lexend = Lexend({
@@ -77,38 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <a className="skip-link" href="#content">
           Skip to content
         </a>
-        <header className="site-header">
-          <nav className="site-header__nav" aria-label="Site">
-            <div className="site-header__group site-header__group--left">
-              <Link href="/about">About</Link>
-              <Link href="/impact">Impact</Link>
-              <Link href="/events">Events</Link>
-            </div>
-            <div className="site-header__brand-stack">
-              <Link className="site-header__brand" href="/" aria-label={`${site.name} home`}>
-                <Image
-                  className="site-header__brand-icon"
-                  src={site.headerLogo}
-                  alt=""
-                  width={1376}
-                  height={768}
-                  sizes="84px"
-                  priority
-                />
-              </Link>
-              <p className="site-header__brand-tagline">{site.eyebrow}</p>
-            </div>
-            <div className="site-header__group site-header__group--right">
-              <Link href="/contact" prefetch={false}>
-                Contact
-              </Link>
-              <Link href="/contact" prefetch={false}>
-                Get Involved
-              </Link>
-              <Link href="/donate">Donate</Link>
-            </div>
-          </nav>
-        </header>
+        <SiteHeader />
         <main className="page-shell" id="content">
           {children}
         </main>
