@@ -6,7 +6,6 @@ import type { ReactNode } from "react";
 
 import "@/app/globals.css";
 
-import { SocialLinks } from "@/components/SocialLinks";
 import { site } from "@/lib/content";
 
 const lexend = Lexend({
@@ -80,26 +79,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </a>
         <header className="site-header">
           <nav className="site-header__nav" aria-label="Site">
-            <div className="site-header__top">
-              <Link className="site-header__brand" href="/" aria-label={`${site.name} home`}>
-                <Image
-                  className="site-header__brand-icon"
-                  src={site.headerLogo}
-                  alt=""
-                  width={1376}
-                  height={768}
-                  sizes="84px"
-                />
-              </Link>
-              <SocialLinks className="site-header__socials" />
+            <div className="site-header__wordmark">
+              <Image
+                className="site-header__wordmark-icon"
+                src={site.navBarLogo}
+                alt=""
+                width={site.navBarLogoWidth}
+                height={site.navBarLogoHeight}
+                sizes="(max-width: 720px) 40px, 36px"
+              />
+              <p className="site-header__wordmark-tagline">
+                <span className="site-header__wordmark-tagline-line site-header__wordmark-tagline-line--first">
+                  At the corner of
+                </span>
+                <span className="site-header__wordmark-tagline-line site-header__wordmark-tagline-line--second">
+                  care and community
+                </span>
+              </p>
             </div>
-            <div className="site-header__links">
+            <div className="site-header__group site-header__group--left">
               <Link href="/about">About</Link>
+              <Link href="/impact">Impact</Link>
+              <Link href="/events">Events</Link>
+            </div>
+            <Link className="site-header__brand" href="/" aria-label={`${site.name} home`}>
+              <Image
+                className="site-header__brand-icon"
+                src={site.headerLogo}
+                alt=""
+                width={1376}
+                height={768}
+                sizes="84px"
+                priority
+              />
+            </Link>
+            <div className="site-header__group site-header__group--right">
               <Link href="/contact" prefetch={false}>
                 Contact
               </Link>
-              <Link href="/events">Events</Link>
-              <Link href="/#media">Press</Link>
+              <Link href="/contact" prefetch={false}>
+                Get Involved
+              </Link>
               <Link href="/donate">Donate</Link>
             </div>
           </nav>

@@ -20,6 +20,7 @@
   --color-focus: rgba(124, 45, 134, 0.36);
   --color-white: #ffffff;
   --color-white-soft: rgba(255, 255, 255, 0.72);
+  --color-nav-surface: rgba(251, 247, 251, 0.94);
 
   --font-body: var(--font-body-loaded, Lexend, Arial, sans-serif);
   --font-display: var(--font-display-loaded, "Inclusive Sans", Arial, sans-serif);
@@ -45,6 +46,8 @@
   --space-20: 5rem;
 
   --radius-card: 1.5rem;
+  --radius-nav: clamp(1.4rem, 3vw, 2rem);
   --shadow-card: 0 1.5rem 4rem rgba(82, 50, 91, 0.12);
+  --shadow-nav: 0 0.65rem 1.6rem rgba(124, 75, 140, 0.2), 0 0.2rem 0.45rem rgba(124, 75, 140, 0.1);
   --content-width: 1180px;
 }

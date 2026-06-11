@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 const baseUrl = "https://www.auntbecksplace.live";
 
-const routes = ["/", "/about", "/events", "/donate", "/contact"] as const;
+const routes = ["/", "/about", "/impact", "/events", "/donate", "/contact"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((path) => ({
