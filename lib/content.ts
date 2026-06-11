@@ -31,7 +31,7 @@ export const site = {
   eyebrow: "At the corner of care and community",
   email: "auntbecksplacebaltimore@gmail.com",
   brandMark: "/assets/abp/imgs/x-street.webp",
-  headerLogo: "/assets/abp/imgs/the-block.webp",
+  headerLogo: "/assets/abp/imgs/the-block-3.webp",
   navBarLogo: "/assets/abp/imgs/x-street-nav.png",
   navBarLogoWidth: 1024,
   navBarLogoHeight: 1024,

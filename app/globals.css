@@ -162,62 +162,37 @@ ul {
   display: grid;
   grid-template-columns: max-content max-content max-content;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   width: 100%;
   min-width: 0;
   padding: var(--space-3) clamp(var(--space-4), 3vw, var(--space-6));
-  padding-inline-start: clamp(9rem, 20vw, 11.75rem);
   border-radius: var(--radius-nav);
   background: var(--color-nav-surface);
   box-shadow: var(--shadow-nav);
   gap: clamp(var(--space-3), 2.4vw, var(--space-6));
 }
 
-.site-header__wordmark {
-  position: absolute;
-  inset-block-start: var(--space-2);
-  inset-inline-start: clamp(var(--space-3), 2vw, var(--space-5));
-  z-index: 1;
+.site-header__brand-stack {
+  grid-column: 2;
   display: grid;
-  justify-items: start;
-  gap: 0.08rem;
-  max-inline-size: min(9rem, 22%);
+  justify-items: center;
+  gap: 0.25rem;
   min-width: 0;
-  pointer-events: none;
+  max-inline-size: 100%;
 }
 
-.site-header__wordmark-icon {
-  display: block;
-  width: clamp(1.5rem, 3.2vw, 2.05rem);
-  height: auto;
-  object-fit: contain;
-  object-position: left top;
-}
-
-.site-header__wordmark-tagline {
+.site-header__brand-tagline {
   margin: 0;
-  display: grid;
   min-width: 0;
-  max-inline-size: clamp(6.6rem, 11vw, 7.8rem);
+  max-inline-size: 100%;
   color: var(--color-text);
   font-family: var(--font-meta);
   font-size: clamp(0.594rem, 0.52rem + 0.15vw, 0.66rem);
   font-weight: 500;
   line-height: 1.08;
-}
-
-.site-header__wordmark-tagline-line {
-  display: block;
-  min-width: 0;
+  text-align: center;
   white-space: nowrap;
-}
-
-.site-header__wordmark-tagline-line--first {
-  margin-inline-start: clamp(0.52rem, 1.45vw, 0.92rem);
-}
-
-.site-header__wordmark-tagline-line--second {
-  margin-inline-start: clamp(0.52rem, 1.45vw, 0.92rem);
+  pointer-events: none;
 }
 
 .site-header__group {
@@ -239,7 +214,6 @@ ul {
 }
 
 .site-header__brand {
-  grid-column: 2;
   display: inline-flex;
   min-height: 44px;
   flex: 0 0 auto;
@@ -247,13 +221,14 @@ ul {
   justify-content: center;
   margin: 0;
   text-decoration: none;
-  transform: translateY(-0.35rem);
 }
 
 .site-header__brand-icon {
   display: block;
-  width: clamp(3.75rem, 6vw, 5.25rem);
+  width: clamp(4.28rem, 6.84vw, 5.99rem);
   height: auto;
+  aspect-ratio: 1376 / 768;
+  object-fit: contain;
 }
 
 .site-header__nav a,
@@ -283,14 +258,14 @@ body:has(.not-found-page) {
 }
 
 body:has(.not-found-page) .site-header__group,
-body:has(.not-found-page) .site-header__wordmark {
+body:has(.not-found-page) .site-header__brand-tagline {
   display: none;
 }
 
 body:has(.not-found-page) .site-header__brand {
-  width: clamp(3.75rem, 6vw, 5.25rem);
-  min-height: clamp(2.1rem, 3.4vw, 2.9rem);
-  background-image: url("/assets/abp/imgs/the-block.png");
+  width: clamp(4.28rem, 6.84vw, 5.99rem);
+  min-height: clamp(2.39rem, 3.88vw, 3.31rem);
+  background-image: url("/assets/abp/imgs/the-block-3.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1037,52 +1012,46 @@ figcaption,
 
 @media (max-width: 720px) {
   .site-header__nav {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
-      "wordmark wordmark"
-      "brand brand"
-      "left right";
+      "brand"
+      "left"
+      "right";
     padding-block: var(--space-4);
     padding-inline: clamp(var(--space-3), 3vw, var(--space-5));
-    row-gap: var(--space-3);
+    row-gap: clamp(var(--space-2), 2.5vw, var(--space-3));
   }
 
-  .site-header__wordmark {
-    position: static;
-    grid-area: wordmark;
-    justify-self: center;
-    max-inline-size: min(16rem, 92%);
-  }
-
-  .site-header__wordmark-tagline {
-    max-inline-size: min(11rem, 72vw);
-    text-align: left;
-  }
-
-  .site-header__wordmark-tagline-line--first {
-    margin-inline-start: clamp(0.46rem, 2vw, 0.8rem);
-  }
-
-  .site-header__wordmark-tagline-line--second {
-    margin-inline-start: clamp(0.46rem, 2vw, 0.8rem);
-  }
-
-  .site-header__brand {
+  .site-header__brand-stack {
     grid-area: brand;
+    grid-column: auto;
     justify-self: center;
-    transform: translateY(-0.2rem);
+    inline-size: 100%;
+    max-inline-size: min(100%, 22rem);
+  }
+
+  .site-header__brand-tagline {
+    max-inline-size: min(100%, calc(100% - 0.5rem));
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .site-header__group {
+    inline-size: 100%;
+    min-width: 0;
+    justify-content: center;
+    justify-self: center;
+    gap: clamp(var(--space-2), 2.8vw, var(--space-4));
   }
 
   .site-header__group--left {
     grid-area: left;
     grid-column: auto;
-    justify-content: center;
   }
 
   .site-header__group--right {
     grid-area: right;
     grid-column: auto;
-    justify-content: center;
   }
 
   .site-header__nav a {
