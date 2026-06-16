@@ -4,9 +4,6 @@ import type { ReactNode } from "react";
 
 import "@/app/globals.css";
 
-import { SiteHeader } from "@/components/SiteHeader";
-import { site } from "@/lib/content";
-
 const lexend = Lexend({
   subsets: ["latin"],
   display: "swap",
@@ -30,20 +27,22 @@ const atkinson = Atkinson_Hyperlegible({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.auntbecksplace.live"),
   title: {
-    default: site.name,
-    template: `%s | ${site.name}`,
+    default: "WebX service discontinued",
+    template: "%s | Aunt Becks Place",
   },
-  description: site.description,
+  description:
+    "This website is no longer in service. Project assets are available upon email request until July 1, 2026.",
   icons: {
-    icon: site.brandMark,
-    shortcut: site.brandMark,
-    apple: site.brandMark,
+    icon: "/assets/abp/imgs/x-street.webp",
+    shortcut: "/assets/abp/imgs/x-street.webp",
+    apple: "/assets/abp/imgs/x-street.webp",
   },
   openGraph: {
-    title: site.name,
-    description: site.description,
+    title: "WebX service discontinued",
+    description:
+      "This website is no longer in service. Project assets are available upon email request until July 1, 2026.",
     type: "website",
-    siteName: site.name,
+    siteName: "Aunt Becks Place",
   },
 };
 
@@ -52,31 +51,12 @@ type RootLayoutProps = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  const gtmId = "GTM-MKQZ8WLZ";
-  const gtmScript = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${gtmId}');`;
-
   return (
     <html lang="en" className={`${lexend.variable} ${inclusiveSans.variable} ${atkinson.variable}`}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: gtmScript }} />
-      </head>
       <body suppressHydrationWarning>
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
         <a className="skip-link" href="#content">
           Skip to content
         </a>
-        <SiteHeader />
         <main className="page-shell" id="content">
           {children}
         </main>
