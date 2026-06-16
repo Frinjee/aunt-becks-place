@@ -1,0 +1,83 @@
+.contactForm {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.formField {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.formField label,
+.formNote {
+  color: var(--color-text-muted);
+  font-family: var(--font-meta);
+  font-size: var(--text-small);
+  font-weight: 700;
+}
+
+.formField input,
+.formField select,
+.formField textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: 0.9rem;
+  background: var(--color-white-soft);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.formField textarea {
+  resize: vertical;
+}
+
+.formField input:focus-visible,
+.formField select:focus-visible,
+.formField textarea:focus-visible {
+  outline: 0.2rem solid var(--color-focus);
+  outline-offset: 0.18rem;
+}
+
+.formField input:user-invalid,
+.formField select:user-invalid,
+.formField textarea:user-invalid {
+  border-color: var(--color-primary);
+}
+
+.submitButton {
+  border: 0;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.fieldError,
+.formFeedback {
+  color: var(--color-primary);
+  font-family: var(--font-meta);
+  font-size: var(--text-small);
+  font-weight: 700;
+  margin: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+
+.formFeedbackSuccess {
+  color: var(--color-text);
+}
+
+.formFieldHoneypot {
+  block-size: 0;
+  inline-size: 0;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+}

@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 
-const CONTACT_EMAIL = "jenifer_hammond@pm.me";
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
+import { IndexRow } from "@/components/IndexRow";
+import { NewsGrid } from "@/components/NewsGrid";
+import { OffsetGrid } from "@/components/OffsetGrid";
+import { indexEntries, newsEntries, site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "WebX service discontinued",
+    absolute: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
   },
   description:
-    "This website is no longer in service. Project assets are available upon email request until July 1, 2026.",
+    "Aunt Becks Place is a traditional neighborhood spot in Baltimore. We restore the village one meal at a time with free Sunday Dinners, mutual care, and restorative justice for neighbors who need food and resources to thrive.",
   alternates: {
     canonical: "https://www.auntbecksplace.live/",
   },
@@ -15,31 +20,59 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Aunt Becks Place",
     url: "https://www.auntbecksplace.live/",
-    title: "WebX service discontinued",
+    title: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
     description:
-      "This website is no longer in service. Project assets are available upon email request until July 1, 2026.",
+      "Restore the village one meal at a time. Join Aunt Becks Place in Baltimore for free Sunday Dinners, mutual care, and a traditional neighborhood gathering place where everyone belongs.",
+    images: [
+      {
+        url: site.openGraphImage,
+        width: site.openGraphImageWidth,
+        height: site.openGraphImageHeight,
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "WebX service discontinued",
+    card: "summary_large_image",
+    title: "Aunt Becks Place | Free Sunday Dinner & Community Support in Baltimore",
     description:
-      "This website is no longer in service. Project assets are available upon email request until July 1, 2026.",
+      "Aunt Becks Place restores the village one meal at a time with free Sunday Dinners and mutual care in Baltimore City.",
+    images: [site.openGraphImage],
   },
 };
 
 export default function Home() {
   return (
-    <section className="notice" aria-labelledby="notice-title">
-      <h1 id="notice-title">WebX service discontinued</h1>
-      <p>This website is no longer in service.</p>
-      <p>
-        Project assets are saved until July 1, 2026 and are available upon email request. Requests
-        must be submitted by June 30, 2026 at 11:59 PM Eastern Time. Nothing will be stored past
-        July 1, 2026.
-      </p>
-      <p>
-        For asset requests, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
-      </p>
-    </section>
+    <>
+      <Hero />
+      <OffsetGrid />
+
+      <div className="calendar-news-layout">
+        <section className="section index-section" id="index" aria-labelledby="index-title">
+          <div className="section__inner">
+            <div className="section__heading">
+              <p className="meta-label">Current / Upcoming Events</p>
+              <h2 id="index-title">Happenings</h2>
+            </div>
+            <div className="index-list">
+              {indexEntries.map((entry, index) => (
+                <IndexRow key={`${entry.title}-${entry.date}`} entry={entry} index={index} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section media-section" id="media" aria-labelledby="media-title">
+          <div className="section__inner">
+            <div className="section__heading">
+              <p className="meta-label">In the News</p>
+              <h2 id="media-title">Media features</h2>
+            </div>
+            <NewsGrid entries={newsEntries} />
+          </div>
+        </section>
+      </div>
+
+      <Footer />
+    </>
   );
 }

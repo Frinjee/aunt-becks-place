@@ -27,6 +27,9 @@ Thumbs.db
 !.vscode/settings.json
 .cursor/
 
+# local archive for unused, old, or duplicate files
+_archive/
+
 aunt-becks-place.code-workspace
 index.html
 status-06-06-2026.md
